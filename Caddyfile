@@ -1,0 +1,16 @@
+answer.nguyenhai.site {
+    root * dist
+    file_server
+    encode gzip
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "DENY"
+        Referrer-Policy "no-referrer-when-downgrade"
+        Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    }
+    # Enable HTTP/2 and HTTP/3 automatically
+    tls {
+        protocols tls1.2 tls1.3
+    }
+}
